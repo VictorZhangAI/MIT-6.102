@@ -1,0 +1,150 @@
+## Reading 1
+
+static-type: check at compile time  
+dynamic-type: check at runtime  
+gradual typing: add static type into a language that is dynamic type  
+
+catch bugs in static checking is the easiest  
+mutable is always devil  
+document must contain assumption that the programming language doesn't provide  
+
+goal of programs: communicating with other computer / other people  
+primary goal: <b>safe from bugs, easy to understand, ready for change</b>  
+
+a good programmer must be multilingual  
+
+## Reading 2
+
+verification: constructs a formal proof that the software is correct  
+systematic testing  
+module: part of software, specification: describe the behavior of a module  
+test first programming: write testbench before write code  
+
+systematic testing: <b>correct, thorough, small</b>  
+test is goal to make it fail  
+input -> subdomains -> partition  
+subdomains: <b>disjoint, complete, nonempty</b>  
+
+boundary is often where bug happens  
+
+unit-test: document boundaries & subdomains in the test  
+
+glass-box testing may include a new boundary  
+statement coverage, branch coverage, path coverage  
+
+integration test: a set of tests to cover the whole software  
+trace the failure separately in functions, especially dependence  
+
+regression testing: run tests after any small changes  
+when meet a bug, add the bug-caused imput immediately into the testcase  
+iterate: best way to use of time when problem is difficult or the space is unknown  
+
+## Reading 3
+
+Code review: read the code by the person who is not the author  
+purpose: improve the code, improve the programmers  
+
+Don't repeat yourself  
+
+Comment where you need: write input, output, even source of the program  
+never translate code into English directly  
+divide code into paragraphs, describe them  
+
+fail fast: if a problem/bug appears quickly, it's easiest to fix  
+numbers are less readable than names  
+constants may need to change  
+constants may be dependent on other constants  
+
+don't reuse parameters and variables  
+name variables properly  
+use abbreviation less as reviewer may not English-native  
+
+never put tab characters into code as tab may diff in different settings  
+never use global variables but use global constant  
+
+consider the lifetime of variables  
+
+only highest layer of a software should interact with users  
+when writing a special case, stop, and think about the common case  
+
+each function should only has a length of a page  
+finally, keep each line short  
+refactoring: make small steps, comment old code when rewriting, 
+use static checking for changes, run tests after every changes, 
+delete old code and commit to the version control  
+
+## Reading 4
+
+Specification act as a contract  
+How to define `same behavior`?  
+contract acts as a firewall  
+specification: function, require, effect  
+consider the implementation is far from reader  
+
+null will cause bug if the object is used soon  
+empty is always allowed as a parameter  
+test case shouldn't include specific behavior  
+all test must follow the spec  
+mutation should never be allowed except for special case  
+exception: signaling bugs, signal anticipated source of failure  
+
+return as a union type instead of using a exception  
+if a bug is indicated, assert it  
+in TS, KeyError or IndexOutOfBound will return `undefined` value instead of exception  
+
+## Reading 5
+
+comparing specs: detereministic, decalarative, strong  
+
+deterministic: presented with a state satisfying the condition  
+underdetermined: the code may have different bahavior as time goes  
+
+decalarative: never give detailed steps, just give the relation of I/R  
+when operational, use commands  
+
+compare the condition is a subset of the previous one or not  
+strengthen the postcondition, weaken the precondition  
+
+immutable: if modify, create a new one  
+mutable: if modify, change at the origin one  
+
+pass mutable value to a function is risky  
+bug will stealth if a mutable value is returned, especially when it is passed into 
+another function  
+do defense copy always  
+
+develop the snapshot of program, visualize the behavior  
+specification should be coherent  
+incoherent: do several things in one function  
+specification should be strong enough, and beware of mutation  
+
+## Reading 6
+
+abstract data types has similar advantage with function  
+creater, producer, observer, mutator  
+ADT is defined by its operations  
+coherent behavior  
+
+use enumerations, use constant object  
+
+test other three method by calling observer  
+
+## Reading 7
+
+a good abstract data type is that it preserves its own intervals  
+representation exposure: class can modify the representation directly  
+readonly, const: unreassignable  
+
+patch rep exposure by defensive copying  
+return a reference to a mutable rep object causes rep exposure  
+
+abstraction function: maps rep values to the abstract values they represent  
+rep invariant & abstraction function should documented into docs  
+write assumptions of the rep into docs  
+benevolent side-effect: the change of a rep value is invisible to client  
+
+write a rep exposure safety argument  
+establish invariant  
+write a implementation, write an ADT, write the program lastly  
+
+## Reading 8
