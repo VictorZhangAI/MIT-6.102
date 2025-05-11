@@ -148,3 +148,35 @@ establish invariant
 write a implementation, write an ADT, write the program lastly  
 
 ## Reading 8
+
+interface: a list of method signatures without method bodies  
+subtype: a subset of supertype  
+structural subtyping: needn't mention the supertype, but be careful about immutability!  
+
+Interface: doc for human & compiler, allowing performance trade-off,
+method with intentionally undetermined specification, multiple views, 
+more/less trustworthy  
+
+inherit, override  
+subclass inherits class's rep  
+dynamic dispatch  
+
+generic type: a type whose specification is in terms of a 
+placeholder type to be filled in later  
+
+put a helper function without assert.fail everytime should use a 
+generic function  
+enumerate: a small set of immutable value  
+
+## Reading 9
+
+functions in TypeScript is First-Class  
+iterator: an object that steps through a sequence of elements  
+use iterable types, not iterator itself  
+Mutating a list that is currently being iterated over is simply not safe in general  
+pure function: create a new output instead of modifying inputs  
+
+higher function: take a function as an argument/return a function back  
+write a iterator instead of using loops  
+
+fp makes programmers focus on the heart of computation  
