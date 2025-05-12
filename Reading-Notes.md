@@ -180,3 +180,47 @@ higher function: take a function as an argument/return a function back
 write a iterator instead of using loops  
 
 fp makes programmers focus on the heart of computation  
+
+## Reading 10
+
+discuss equality without mutation is easier  
+define a equivalence relation between data  
+if and only if AF(a) = AF(b)  
+
+reference / value equality: whether objects is in same memory / value  
+
+call a mutator; create a observable difference  
+observational equality: cannot be distinguished now  
+behavioral equality: cannot be distinguished even in the future  
+
+TS/JS is lack of deep equality judging  
+but deep equality operations should be use with care, especially, not use with ADT  
+
+Always implement hashing consistent with equality  
+Always use behavioral equality for hashing, so that hash values do not change over time.  
+interning: reuse the instance  
+
+# Reading 11
+
+recursive data type: eg: immutable list  
+implementation empty using the factory function without passing arguments  
+put parameters into rep could be powerful and dangerous  
+
+the immutable list is from a natural abstraction, ans is a generic type  
+declaring ; implementing  
+rewrite reverse using accumulate helper is more efficient  
+a state change that doesn't change the abstract value represented by the object  
+Any time you write an ADT, its specs must not talk about the rep.  
+
+use a common design of wrapper  
+do not use `instanceof`  
+
+extract set of variables  
+try all possible assignments  
+evaluate the formula for each environment  
+
+backtrack a map is just throwing the map away!!  
+
+## Reading 12
+
+(TODO)
