@@ -223,4 +223,47 @@ backtrack a map is just throwing the map away!!
 
 ## Reading 12
 
-(TODO)
+grammar: used to distinguish whether a string is legal  
+terminals: literal strings  
+nonterminal: a variable to change into terminal / nonterminal  
+use repitition operator to write recursion into iteration into (non-)terminal  
+parser generator: input a grammar, output a parser  
+
+import ParserLib library, define enum type contains nonterminals  
+write a recursive function to visit nodes in parsetree  
+
+left recursion may have fault in parsing  
+
+## Reading 13
+
+MUST read the API docs before programming, bugs could appear as 
+the usage is described by yourself  
+`const` only means the address of memory is unreassignable!!!  
+
+let program fail fast is a good practice  
+do a runtime check is a way to fail fast  
+
+assertions could be expensive to performance  
+assume the precondition of input and postcondition of return value  
+If an assertion is obvious from its local context, leave it out  
+
+internal failure: assertion; external failure: exception  
+
+incremental development: develop a bit and test a bit at a time  
+
+modularity and encapsulation is good for find out bugs  
+modularity: divide a system into modules  
+encapsulation: build walls between walls around modules  
+
+minimizing the scope of variables  
+always declare a loop variable in the for-loop initializer  
+declare a variable only when needs, and in the innermost block that you can  
+
+reproduce a bug reported by user may be very hard  
+
+decrease input into a controllable range and produce a simmilar bug is easy to 
+debug  
+debug use a scientific method  
+study the data, hypothesize, delta debugging, prioritize hypothesis  
+debug one bug at a time  
+
