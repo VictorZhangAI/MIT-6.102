@@ -267,3 +267,33 @@ debug use a scientific method
 study the data, hypothesize, delta debugging, prioritize hypothesis  
 debug one bug at a time  
 
+## Reading 14
+
+shared memory, message passing  
+process: a virtual computer, which lets the program feels like it has the 
+machine itself  
+thread: a virtual processor  
+worker: export from a .js file, could be considered as a light thread  
+
+when concurrent running, the instructions could interleave with each other  
+message passing doesn't eliminate race condition  
+
+
+## Reading 15
+
+promise: a started but unprepared for result computation  
+pending -> fulfilled/rejected  
+await: convert a promise into a value  
+
+void is designed as a return value for not returning anything  
+void: should not return a value, undefined: no return value is important  
+
+a function must define as async to use await  
+JS has only one thread control for a whole program  
+await always gives up control  
+
+busy-waiting: staying a tight loop without give up control  
+
+## Reading 16
+
+
