@@ -296,4 +296,42 @@ busy-waiting: staying a tight loop without give up control
 
 ## Reading 16
 
+promise has two different clients, consumer and promiser  
+Deferred: Promise with mutators  
+
+mutual exclusion: only one computation at a time  
+use map/filter instead of for loop  
+
+## Reading 17
+
+callback: synchronized within the call and return of the map/filter/reduce  
+event queue, event loop  
+block: holding onto the low control, not returning to the caller  
+`then` is the only way to access the value that a promise computes  
+
+use element tree to consider HTML GUI  
+Listener pattern: event source generate a stream of discrete events, call a 
+function to be called  
+listeners should run quickly and return quickly  
+
+trigger event to two elements needs to create a cycle  
+don't forget to clean up  
+
+a single input loop is a bad practice  
+
+## Reading 18
+
+discriminated union: a union of object types that share a string 
+or number literal that distinguishes among them  
+type to a discriminated union is a good idea to avoid magic number & null  
+
+call method call chaining is same as functional programming  
+
+## Reading 19
+
+design a small language is good for solving problems  
+build an abstract syntax tree  
+domain-specific language  
+use a public factory function  
+music type with operations  
 
